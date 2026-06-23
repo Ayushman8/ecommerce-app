@@ -21,8 +21,8 @@ export default function CartItems({ item, onRemove, onUpdateQuantity }: CartItem
                         <Text className='text-primary font-medium text-sm mb-1'>{item.product.name}</Text>
                         <Text className='text-secondary text-xs'>Size: {item.size}</Text>
                     </View>
-                    <TouchableOpacity>
-                        <Ionicons onPress={onRemove} name='close-circle-outline' size={20} color="#FF4C3B" />
+                    <TouchableOpacity onPress={onRemove}>
+                        <Ionicons name='close-circle-outline' size={20} color="#FF4C3B" />
                     </TouchableOpacity>
                 </View>
 

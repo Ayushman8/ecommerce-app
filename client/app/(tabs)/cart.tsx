@@ -21,8 +21,8 @@ export default function Cart() {
       {cartItems.length > 0 ? (
         <>
           <ScrollView className='flex-1 px-4 pt-4 ' showsVerticalScrollIndicator={false}>
-            {cartItems.map((item, index) => (
-              <CartItems key={index} item={item} onRemove={() => removeFromCart(item.id, item.size)} onUpdateQuantity={(q) => updateQuantity(item.id, q, item.size)}/>
+            {cartItems.map((item) => (
+              <CartItems key={`${item.id}-${item.size}`} item={item} onRemove={() => removeFromCart(item.id, item.size)} onUpdateQuantity={(q) => updateQuantity(item.id, q, item.size)}/>
             ))}
           </ScrollView>
 
