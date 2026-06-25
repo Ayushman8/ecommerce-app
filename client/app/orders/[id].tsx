@@ -10,11 +10,12 @@ import { dummyOrders } from "@/assets/assets";
 
 export default function OrderDetails() {
     const { id } = useLocalSearchParams();
+    const orderId = Array.isArray(id) ? id[0] : id
     const [order, setOrder] = useState<Order | null>(null);
     const [loading, setLoading] = useState(true);
 
     const fetchOrderDetails = async () => {
-        setOrder(dummyOrders.find((order) => order._id === id) as any);
+        setOrder(dummyOrders.find((order) => order._id === orderId) as any);
         setLoading(false);
     };
 

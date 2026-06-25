@@ -32,6 +32,11 @@ export default function EditProduct() {
         const fetchProduct = async () => {
             try {
                 const product: any = dummyProducts.find((p) => p._id === id);
+                if (!product) {
+                    Toast.show({ type: 'error', text1: 'Product Not Found' });
+                    router.back();
+                    return;
+                }
                 setName(product.name);
                 setDescription(product.description || "");
                 setPrice(product.price.toString());
