@@ -76,7 +76,7 @@ export default function AdminOrders() {
                                 <Text className="text-xs text-secondary font-bold mb-1">CUSTOMER</Text>
                                 <Text className="text-primary font-medium">{order.user?.name || 'Unknown User'}</Text>
                                 <Text className="text-secondary text-xs">{order.user?.email || 'No email'}</Text>
-                                {!order.user && <Text className="text-xs text-gray-400 mt-1">ID: {order.user?._id || 'N/A'}</Text>}
+                                {order.user?._id && <Text className="text-xs text-gray-400 mt-1">ID: {order.user._id}</Text>}
                             </View>
 
                             <View className="mb-3 bg-gray-50 p-3 rounded-lg">

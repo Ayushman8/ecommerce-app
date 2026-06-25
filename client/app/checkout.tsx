@@ -75,7 +75,7 @@ export default function Checkout() {
         {selectedAddress ? (
           <View className='bg-white p-4 rounded-xl mb-6 shadow-sm'>
             <View className='flex-row items-center justify-between mb-2'>
-              <Text className='test-base font-bold'>{selectedAddress.type}</Text>
+              <Text className='text-base font-bold'>{selectedAddress.type}</Text>
               <TouchableOpacity onPress={() => router.push('/addresses')}>
                 <Text className='text-accent text-sm'>Change</Text>
               </TouchableOpacity>
