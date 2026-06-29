@@ -6,7 +6,7 @@ import connectDB from "./config/db.js";
 const app = express();
 
 // Connect to MongoDB
-await connectDB
+await connectDB()
 
 // Middleware
 app.use(cors())

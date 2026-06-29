@@ -2,10 +2,14 @@ import "dotenv/config"
 import mongoose from "mongoose"
 
 const connectDB = async () => {
+    const mongoUri = process.env.MONGODB_URI;
+    if (!mongoUri) {
+        throw new Error("MONGODB_URI is required");
+    }
     mongoose.connection.on('connected', () => {
         console.log('MongoDB connected')
     })
-    await mongoose.connect(process.env.MONGODB_URI as string)
+    await mongoose.connect(mongoUri)
 }
 
 export default connectDB
