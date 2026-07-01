@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema<IUser>({
     email: {
         type: String,
         unique: true,
+        sparse: true,
         trim: true
     },
     clerkId: {

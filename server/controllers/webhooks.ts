@@ -1,6 +1,6 @@
 import { verifyWebhook } from '@clerk/express/webhooks'
 import express, { Request, Response } from 'express'
-import User from '../models/user.js'
+import User from '../models/User.js'
 
 const app = express()
 
@@ -13,8 +13,8 @@ export const clerkWebhook = async (req: Request, res: Response) => {
 
             const userData = {
                 clerkId: evt.data.id,
-                email: evt.data?.email_addresses[0].email_address,
-                name: evt.data?.first_name + "  " + evt.data?.last_name,
+                email: evt.data?.email_addresses?.[0]?.email_address,
+                name: `${evt.data?.first_name ?? ""} ${evt.data?.last_name ?? ""}`.trim(),
                 image: evt.data?.image_url
             }
 
